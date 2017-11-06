@@ -10,8 +10,8 @@
 				$dir = 'memes';
 				$files = scandir($dir);
 				?>div#p0{
-			<?for ($i=0,$s=sizeof($files);$i<($s-2);$i++){
-					?>	background: url(memes/<?echo $files[$i+2]?>) no-repeat -9999px -9999px;
+			<?for ($s=sizeof($files);($s-2)>0;$s--){
+					?>	background: url(memes/<?echo $files[$s]?>) no-repeat -9999px -9999px;
 			<?}?>}
 			
 			img.meme {
@@ -131,16 +131,16 @@
 		<!--Main Page Content-->
 		<div class="col-10 gray">
 			<?
-				for ($i=0,$s=sizeof($files);$i<($s-2);$i++){
-					if ($i%6==0){
-						if ($i>0){
+				for ($i=$s=sizeof($files);$i>2;$i--){
+					if (($s-$i)%6==0){
+						if (($s-$i)>0){
 							?></div>
 			<?
 						}
 					?><div class="col-">
 			<?
 					}
-					?>	<div class="col-2"><img class="meme" onclick="modalClick (this)" <?echo "src='memes/"; echo $files[$i+2]; echo "'";?>></div>
+					?>	<div class="col-2"><img class="meme" onclick="modalClick (this)" <?echo "src='memes/"; echo $files[$i-1]; echo "'";?>></div>
 			<?
 				}
 				?></div>
