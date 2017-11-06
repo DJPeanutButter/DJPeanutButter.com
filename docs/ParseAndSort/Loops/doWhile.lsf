@@ -1,0 +1,13 @@
+Let's take a look at the Do...While Loop
+[code]#include <iostream>
+
+int main(){
+    int n;
+    do{
+        std::cout   << "n = ";
+        std::cin    >> n;
+        std::cout   << "n = " << n << std::endl;
+    }while(n!=0);
+    return 0;
+}
+[/code]

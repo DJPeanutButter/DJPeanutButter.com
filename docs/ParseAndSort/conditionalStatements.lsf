@@ -1,0 +1,67 @@
+This is the source file to our Conditional Statement demonstration.
+[code]#include <iostream>
+
+int main(){
+    int n;
+    
+    std::cout   << "Please enter a number less than 3" << std::endl;
+    std::cin    >> n;
+    
+    if (n<3)
+        std::cout   << "Good Job!";
+    else{
+        std::cout   << "You Suck!";
+        return -1;
+    }
+    
+    std::cout   << "Please enter a 1, 3, 5 or 7" << std::endl;
+    std::cin    >> n;
+    
+    switch (n){
+        case 1:
+            std::cout   << "You entered a 1!" << std::endl;
+            break;
+        case 3:
+        case 5:
+            std::cout   << "You entered a 3 or a 5." << std::endl;
+        case 7:
+            std::cout   << "You entered a 3, 5 or 7." << std::endl;
+            break;
+        default:
+            std::cout   << "You can't follow directions..." << std::endl;
+            break;
+    }
+    return 0;
+}
+[/code]
+Let's go ahead and break this down line by line.
+/lf/ /lf/
+The first lines
+[code]#include <iostream>
+
+int main(){
+[/code]are nothing new to us. If you need a refresher, read /l="../helloWorld.php"//i/Hello, World!\i\\l\
+/lf/ /lf/
+The next line
+[code]int n;[/code]
+declares a variable, /i/n\i\, of type /b/int\b\ (Integer) without
+assigning a value. This tells the computer to dedicate a section of
+memory for an integer but does not give it a value to be stored in that
+section of memory. It is important to note that while we did not assign
+a value to /i/n\i\, it /i/does\i\ have a value in that space in memory.
+When we declare a data type but do not initialize a value, there is no
+way of knowing what value will have been in that space before we set it
+aside for our variable.
+[code]std::cout   << "Please enter a number less than 3" << std::endl;[/code]
+is covered in /l="../helloWorld.php"//i/Hello, World!\l\
+[code]std::cin    >> n;[/code]
+This line takes input from the command line and assigns it to the variable /i/n\i\. Later, we will shy away from using this particular approach, but it will work for this example.
+[code]if (n<3)
+    std::cout   << "Good Job!";
+else{
+    std::cout   << "You Suck!";
+    return -1;
+}
+[/code]
+These lines of code are the heart of this program. This is called an /b/If-Then-(Else)\b\ statement, as is one type of /b/Conditional Statement\b\, or sometimes a /b/Control Structure\b\.
+The /b/If\b\ part of the Conditional Statement takes one parameter, a /b/boolean\b\ value - a value or expression that represents either true or false. If the expression evaluates to true, the line of code after the Conditional Statement is executed, if the expression evaluates to false, the program skips the line after if and, if there is an /i/else\i\ command, executes the line that follows it. When /b/{\b\ and /b/}\b\ are used, everything between them is handled as if it were one line of code.

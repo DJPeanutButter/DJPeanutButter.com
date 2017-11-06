@@ -1,0 +1,14 @@
+.item,
+#showCpp,
+#showProg,
+#hideProg:target,
+#hideCpp:target {
+    display: none; 
+}
+
+#hideCpp:target + #showCpp,
+#hideProg:target + #showProg,
+#hideCpp:target ~ .item,
+#hideProg:target ~ .item {
+    display: inline; 
+}

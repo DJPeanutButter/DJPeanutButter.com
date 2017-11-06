@@ -1,0 +1,4 @@
+         TEXT                    ADDRESS
+ Page    "Parse And Sort Lesson Plan"
+ Menu    "../../menu.html"
+ Main    "Welcome to the Parse and Sort Lesson Plan!"   "plan.lsf"

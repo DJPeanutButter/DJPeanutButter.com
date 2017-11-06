@@ -1,0 +1,8 @@
+Let's take a look at the For Loop
+[code]#include <iostream>
+
+int main(){
+    SOMETHING WITH A FOR LOOP
+    return 0;
+}
+[/code]

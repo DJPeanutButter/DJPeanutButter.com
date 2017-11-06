@@ -1,0 +1,6 @@
+         TEXT                    ADDRESS
+ Page    "Hello, World! Demonstration"
+ Menu    "../menu.html"
+ Main    "Hello, World!!"        "helloWorld.lsf"
+ Back    "Back to C++"           "cpp.php"
+ Next    "Next: Parse and Sort"  "ParseAndSort/plan.php"

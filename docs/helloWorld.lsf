@@ -1,0 +1,18 @@
+This is the source file to our Hello, World! demonstration.
+[code]#include <iostream>
+int main(){
+    std::cout << "Hello, World!" << std::endl;
+    return 0;
+}
+[/code]
+An oldie-but-goodie, the /i/Hello, World!\i\ program is your first look at the general structure of a program when learning a new language. Let's go ahead and break this one down.
+[code]#include <iostream>[/code]
+Any line that starts with the /i/#\i\ symbol is a /i/Preprocessor Directive\i\. A Preprocessor Directive is basically just instructions for the compiler - it does not coincide with any machine code but rather tells the preprocessor how to manipulate the source code before compiling. In the case of the /i/include\i\ directive, it tells the preprocessor to place the contents of the specified file, as if they were part of the source code, at the location of the directive. In this case, the entire contents of /i/iostream.h\i\ - a standard header file - will be inserted at the beginning of our source code. Iostream - In/Out Stream - has many functions and data structures for handling input and output in the form of /i/streams\i\. We'll get more into what a stream is later, but for now, just know that this file holds the foundation for what we will be learning in the next few chapters.
+[code]int main(){
+...
+}[/code]
+This is an example of a /i/function\i\. This, however, is a special case. The /b/Main\b\ function is the entry point of the program. On start-up, the program runs the Main function. All other functions, in order to be executed, must be called from inside the main function. This, too, will be covered more in later chapters.
+[code]std::cout << "Hello, World!" << std::endl;[/code]
+This part is gets a little muddy, but here goes. /b/std\b\ refers to the /i/Standard Library Namespace\i\. A namespace is a subcategory of code that allows you to have control over the scope of functions, constants and other pieces of code. What this means, is that you can have two separate functions, with the same name, and store them in different namespaces so that you can call whichever one you wish at any point in your program. This helps /i/greatly\i\ with organizing your code. The operator /b/::\b\ is the scope operator. It allows you to chose which namespace in which you work. This also comes into play when you start to work with Classes and Structures, but let's not get ahead of ourselves. /b/cout\b\ (pronounced C-Out) is the standard output stream. When dealing with streams, the /b/<<\b\ operator takes one parameter - of type /b/ostream\b\ - adds it to the stream, and returns a stream containing the original stream with the parameter stream appended. This allows you to string the /b/<<\b\ operator indefinitely. For now, just know that it allows you to append numbers, strings, and other data types to the same stream.
+[code]return 0;[/code]
+The /i/return\i\ keyword returns a value to the function call, in this case, the main function of the program, i.e. the program itself. Returning a value to the main function results in setting the ERRORLEVEL system variable on windows.

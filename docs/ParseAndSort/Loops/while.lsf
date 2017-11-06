@@ -1,0 +1,26 @@
+Let's take a look at the While Loop
+[code]#include <iostream>
+
+int main(){
+    std::string inp;
+    while (inp!="0"){
+        std::cout << "Type 0 to exit" << std::endl;
+        std::getline (std::cin, inp);
+    }
+    return 0;
+}
+[/code]
+The first line that looks different to us should be this one
+[code]std::string inp;[/code]
+This is a variable declaration, /i/std::string\i\ is an object that represents a sequence of characters. An /i/object\i\ is a meta structure built out of smaller data types. /i/Classes\i\, /i/Structures\i\ and /i/Objects\i\ all refer to the same thing - a composite data type. /i/Primitive Type\i\ (or just a /i/Primitive\i\), /i/Basic Type\i\ or /i/Native Type\i\ all refer to a primitive data type (a number), many of which are used to create a composite data type.
+/lf/
+Here, we're initializing a variable - inp - to store user input. It is good practice to store input (from the standard input stream) as a string because every character that a user can type can be stored in a string. Even though we might want the user to enter a number, they /b/could\b\ still enter a character, which would crash our program if we were expecting a number. You should /i/always\i\ assume that the user will not follow directions, and have controls in place to handle it when they don't.
+[code]while (inp!="0"){
+    std::cout << "Type 0 to exit" << std::endl;
+    std::getline (std::cin, inp);
+}[/code]
+The reason we're here, the /i/while\i\ loop. This is a control structure, just like the an if statement. In fact, it looks and acts very similar to an if statement. Like an if statement, the while function evaluates the single boolean argument passed to it, and if true, executes the following line (the /i/body\i\ of the loop). Unlike the if statement, after executing the body, the while loop calls itself again (loops) and re-evaluates the argument passed to it. In our example, the while loop keeps calling itself until the user types a 0. Since a while loop evaluates the argument /i/before\i\ the body of the loop, the body is /i/not\i\ guaranteed to execute. Take the following code into consideration.
+[code]while (false){
+    doStuff("things");
+}[/code]
+Since /b/false\b\ is never going to evaluate to /b/true\b\ (why would it?) doStuff() is never called.

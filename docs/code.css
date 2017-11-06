@@ -1,0 +1,33 @@
+span.include, span.type, span.operator,
+span.quote, span.number, span.comment{
+	font-weight: bolder;
+}
+
+span.name{
+	font-style: italic;
+	font-weight:bolder;
+}
+
+pre span.include, pre span.comment{
+	color:	#393;
+}
+
+pre span.type{
+	color:	#939;
+}
+
+pre span.operator{
+	color:	#339;
+}
+
+pre span.quote{
+	color:	#933;
+}
+
+pre span.number{
+	color:	#c93;
+}
+
+pre div.white{
+	overflow:auto;
+}
