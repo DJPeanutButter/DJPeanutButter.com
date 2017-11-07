@@ -376,8 +376,26 @@ function replaceTagsLS ($TML,$HTML,&$inp){
 
 function formatCodeBetaLS ($inp){
   /*
-  TODO:   Create escape characters for \ and /
-  */
+   * This function is going to go through $inp twice. On
+   * the first pass, we will be looking for keywords and
+   * characters that we want to highlight on the page (things
+   * like int, char, true, false, etc...) and we'll use
+   * Temporary Markup tags to indicate where and how we'll
+   * be highlighting the code. We have to be careful that
+   * these Temporary Markup tags don't have any HTML special
+   * characters, because we're using them to get through a
+   * function designed to remove HTML special characters.
+   * After the first pass we'll clean the code up to make
+   * sure there aren't any HTML characters that could affect
+   * the display of the web page or even take control away
+   * from it completely. After removing any unwanted HTML
+   * characters, we'll replace our Temporary Markup tags
+   * with our desired HTML tags so that we can have
+   * highlighted code.
+   *
+   * TODO:   Create escape characters for \ and /
+   */
+  
   $pos=0;
   do{
     if ($inp[$pos]==="#"){
@@ -462,6 +480,7 @@ function formatCodeBetaLS ($inp){
   //Clean up the code to get rid of any HTML characters
   $inp = htmlentities ($inp);
   
+  //Replace the Temporary Markup tags with HTML tags
   replaceTagsLS ("/inc/",   "<span class=\"include\">",   $inp);
   replaceTagsLS ("\\inc\\", "</span>",                    $inp);
   replaceTagsLS ("/op/",    "<span class=\"operator\">",  $inp);
