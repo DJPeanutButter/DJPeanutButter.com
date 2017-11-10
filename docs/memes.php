@@ -9,15 +9,10 @@
 			<?
 				$dir = 'memes';
 				$files = scandir($dir);
-        $r = 0;
 				?>div#p0{
-			<?for ($r=$s=sizeof($files);($s-2)>0;$s--){
-          if (($files [$s-1][0] >= '0') and ($files [$s-1][0] <= '9')){
-            ?>  background: url(memes/<?echo $files[$s-1]?>) no-repeat -9999px -9999px; 
-            <?
-          }else
-            $r--;
-        }?>}
+			<?for ($s=sizeof($files);($s-2)>0;$s--){
+					?>	background: url(memes/<?echo $files[$s]?>) no-repeat -9999px -9999px;
+			<?}?>}
 			
 			img.meme {
 				border-radius:	5px;
@@ -136,7 +131,7 @@
 		<!--Main Page Content-->
 		<div class="col-10 gray">
 			<?
-				for ($i=$s=$r;$i>2;$i--){
+				for ($i=$s=sizeof($files);$i>2;$i--){
 					if (($s-$i)%6==0){
 						if (($s-$i)>0){
 							?></div>
