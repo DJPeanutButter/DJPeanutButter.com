@@ -1,0 +1,7 @@
+         TEXT                                        ADDRESS
+ Page    "Parse And Sort - Parse Function"
+ Menu                                                "../../../menu.html"
+ Main    "Parse and Sort - Parse Function"           "parse.lsf"
+ Back    "Back to Lesson Plan"                       "../plan.php"
+ Next    "Next: Arrays"                              "../arrays.php"
+ Prev    "Prev: Swap Function"                       "swap.php"

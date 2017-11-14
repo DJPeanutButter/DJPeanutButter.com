@@ -1,0 +1,7 @@
+         TEXT                                        ADDRESS
+ Page    "Parse And Sort - Populating Arrays"
+ Menu                                                "../../../menu.html"
+ Main    "Parse and Sort - Populating Arrays"        "populateArray.lsf"
+ Back    "Back to Lesson Plan"                       "../plan.php"
+ Next    "Next: Putting Everything Together"         "parseAndSort.php"
+ Prev    "Prev: Parse Function"                      "../Functions/parse.php"

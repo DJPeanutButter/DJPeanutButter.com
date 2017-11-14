@@ -1,6 +1,7 @@
          TEXT                                        ADDRESS
  Page    "Parse And Sort - While Loops"
  Menu                                                "../../../menu.html"
- Main    "Parse and Sort - Conditional Statements"   "while.lsf"
+ Main    "Parse and Sort - While Loop"               "while.lsf"
  Back    "Back to Lesson Plan"                       "../plan.php"
  Next    "Next: Do...While Loops"                    "doWhile.php"
+ Prev    "Prev: Conditional Statements"              "../conditionalStatements.php"

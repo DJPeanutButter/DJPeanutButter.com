@@ -3,4 +3,5 @@
  Menu                                                "../../../menu.html"
  Main    "Parse and Sort - For Loops"                "for.lsf"
  Back    "Back to Lesson Plan"                       "../plan.php"
- Next    "Prev: Do...While Loops"                    "doWhile.php"
+ Next    "Next: Writing Functions"                   "../Functions/swap.php"
+ Prev    "Prev: Do...While Loops"                    "doWhile.php"

@@ -1,0 +1,25 @@
+[code]#include <iostream>
+#include <string>
+#include <sstream>
+
+bool parse(std::string str, int& buf);
+
+int main (){
+	std::string inp;
+	int n;
+	do{	//do...while loop
+		std::cout << "Please enter a number." << std::endl;
+		std::getline (std::cin, inp);
+	}while (!parse(inp, n));
+	std::cout << "You entered " << n << "!" << std::endl;
+	return 0;
+}
+
+bool parse(std::string str, int& buf){
+	std::stringstream stream (str);
+	stream >> buf;
+	if (!stream)
+		return false;
+	return true;
+}
+[/code]

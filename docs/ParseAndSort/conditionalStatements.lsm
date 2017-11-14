@@ -3,4 +3,4 @@
  Menu                                                "../../menu.html"
  Main    "Parse and Sort - Conditional Statements"   "conditionalStatements.lsf"
  Back    "Back to Lesson Plan"                       "plan.php"
- Next    "Next: Loops"                               "loops.php"
+ Next    "Next: While Loops"                         "Loops/while.php"

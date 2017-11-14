@@ -11,3 +11,9 @@ int main(){
     return 0;
 }
 [/code]
+Looking at this code, we see 2 major differences from the /i/while\i\ loop we just learned about. The first difference is that we have a new keyword /i/do\i\. The second major difference is that /i/while\i\ comes /i/after\i\ the body of the loop. The implication of this is that the body of the loop - everything between /i/do\i\ and /i/while\i\ is executed before the boolean parameter to /i/while\i\ is evaluated. That means that the code is guaranteed to execute at least once. For instance...
+[code]do{
+  stuff();
+}while(false);
+[/code]
+will call the /i/stuff\i\ function once before exiting the loop because false will evaluate to false, causing the loop to break.

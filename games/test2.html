@@ -1,0 +1,68 @@
+<html>
+    <head>
+        <style>
+            body{
+                background-color: #DCD0C0;
+            }
+            canvas, textarea {
+                border:3px solid #C0B283;
+            }
+            canvas{
+                background-color: #f4f4f4;
+            }
+            span {
+                display: inline-block ;
+            }
+            input,button {
+                font-family: sans-serif;
+                font-weight: bolder;
+            }
+        </style>
+        <title>Test</title>
+    </head>
+    <body>
+    Use Adress Bar
+        <script>
+var hWindow=300,
+    wWindow=1300,
+    nodeCount=3,
+    myGameArea = {
+        submit  : document.createElement("button"),
+        input   : document.createElement("textarea"),
+        canvas  : document.createElement("canvas"),
+        start   : function(){
+            this.submit.appendChild(document.createTextNode("Create Image"));
+            this.submit.onclick = function(){
+                myGameArea.draw(myGameArea.input.value);
+            };
+            this.canvas.width   = this.input.style.width    = wWindow;
+            this.canvas.height  = this.input.style.height   = hWindow;
+            
+            this.context = this.canvas.getContext("2d");
+            if(document.body.childNodes.length===nodeCount){
+                document.body.appendChild(document.createElement("br"));
+                document.body.appendChild(this.submit);
+                document.body.appendChild(document.createElement("br"));
+                document.body.appendChild(this.input);
+                document.body.appendChild(this.canvas);
+            }
+        },
+        clear   : function(){
+            this.context.clearRect(0,0,this.canvas.width,this.canvas.height);
+        },
+        draw    : function (str){
+            this.clear();
+            this.canvas.width = ((str.length+3)-(str.length%3))/3;
+            for (var i=0;i<str.length;i+=3){
+                this.context.fillStyle="#"+("0"+str.charCodeAt(i).toString(16)).substr(-2)+(i+1<str.length?("0"+str.charCodeAt(i+1).toString(16)).substr(-2):"00")+(i+2<str.length?("0"+str.charCodeAt(i+2).toString(16)).substr(-2):"00");
+                this.context.fillRect (i/3,0,1,hWindow);
+            }
+        }
+    };
+
+window.onload=function(){
+    myGameArea.start();
+};
+</script>
+    </body>
+</html>

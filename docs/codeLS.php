@@ -421,7 +421,10 @@ function formatCodeBetaLS ($inp){
       $inp = substr_replace ($inp, "/op/", $pos, 0);
       $pos += 4;
       
-      for (;($inp[$pos]<'A' or $inp[$pos]>'z' or ($inp[$pos]>'Z' and $inp[$pos]<'a')) and ($inp[$pos]>"9" or $inp[$pos]<"0") and !($inp[$pos]==="\"" or $inp[$pos]==="\'") and!($inp[$pos]==="\r") and $pos<strlen($inp);$pos++);
+      for (;$pos<strlen($inp) and ($inp[$pos]<'A' or $inp[$pos]>'z' or ($inp[$pos]>'Z' and $inp[$pos]<'a')) and ($inp[$pos]>"9" or $inp[$pos]<"0") and !($inp[$pos]==="\"" or $inp[$pos]==="\'") and!($inp[$pos]==="\r");$pos++){
+        if ($inp[$pos]==='/' and $inp[$pos+1]==='*')
+          break;
+      };
       
       $inp = substr_replace ($inp, "\\op\\", $pos, 0);
       $pos += 3;

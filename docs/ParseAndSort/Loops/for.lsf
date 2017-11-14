@@ -2,7 +2,29 @@ Let's take a look at the For Loop
 [code]#include <iostream>
 
 int main(){
-    SOMETHING WITH A FOR LOOP
-    return 0;
+  int inp;
+  
+  std::cout << "Enter a number...";
+  std::cin >> inp;
+  
+  for (i=1;i<=inp;i++){
+    std::cout << i << (i==inp?"!":",");
+  }
+  
+  return 0;
 }
 [/code]
+This program will ask you to enter a number and count from 1 to that number. The syntax of the for loop is a little different from the last two loops, but it will become a very useful tool in your arsenal once you wrap your head around it. The strangest part that sticks out right out of the gate is the fact that we have /b/;\b\s inside a function call. That's because /i/for\i\ takes 3 statements as it's parameter(s?). The first statement is the /i/initialization statement\i\. This is code to be executed /i/before\i\ the first comparison. The second statement is the /i/conditional statement\i\. This is the comparison that is made before every iteration of the code. If this statement is left empty or evaluates to true, the loop will iterate, if the statement evaluates to false, the loop breaks. The third statement is the /i/iterative statement\i\. This is code that is executed after each iteration of the loop. This is intended to increment an iterator of some sort.
+[code]for (/*initialization statement*/; /*conditional statement*/; /*iterative statement*/){
+  ...
+  BODY OF LOOP
+  ...
+}
+[/code]
+The next bit of code that is unfamiliar to us is this
+[code](i==inp?"!":",")[/code]
+/b/?\b\ is the /i/ternary operator\i\. It takes 3 parameters - hence the name. The first parameter is a boolean type. The second parameter is the return value if the boolean is true and the third parameter is the value if the boolean is false. A /b/:\b\ separates the two return values to distinguish them from each other.
+[code]/*boolean*/ ? /*return value if true*/ : /*return value if false*/[/code]
+The ternary operator can help you keep your code shorter by replacing if-then-else statements. It can also hurt the readability of your code, especially when you nest one inside another ternary operator.
+[code](bool ? (bool ? retValTrueTrue : retValTrueFalse) : (bool ? retValFalseTrue : retValFalseFalse))[/code]
+Yikes.
